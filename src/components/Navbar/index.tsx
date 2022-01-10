@@ -1,7 +1,6 @@
 import React from 'react';
 import {Container, List} from './styles';
 import NavButton from './NavButton';
-import {Icon} from '@iconify/react';
 
 const NavBar = (): JSX.Element => (
   <Container>
