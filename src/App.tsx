@@ -6,6 +6,7 @@ import {mainTheme} from 'theme/mainTheme';
 import GlobalStyle from 'GlobalStyle';
 
 import HomeView from './views/Home';
+import Profile from 'views/Profile';
 
 const App = (): JSX.Element => {
   const isLogged = true;
@@ -19,7 +20,7 @@ const App = (): JSX.Element => {
             <>
               <Route path="/" element={<HomeView />} />
               <Route path="/1on1" element={<HomeView />} />
-              <Route path="/profile" element={<HomeView />} />
+              <Route path="/profile" element={<Profile />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </>
           ) : (
