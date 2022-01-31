@@ -35,6 +35,7 @@ export const Container = styled.div`
   padding: 16px 24px;
   border-radius: 24px;
   background-color: #f2e7e7;
+  cursor: pointer;
 
   display: flex;
   flex-direction: column;

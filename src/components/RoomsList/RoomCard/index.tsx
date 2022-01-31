@@ -1,4 +1,5 @@
 import React from 'react';
+import {Levels} from 'types';
 import {Icon} from '@iconify/react';
 import {
   Container,
@@ -12,17 +13,10 @@ import {
   PeopleCountNumber,
 } from './styles';
 
-enum Level {
-  Any,
-  Begginer,
-  Intermediate,
-  Advanced,
-}
-
 interface IProps {
   name: string;
   lang: string;
-  level: Level;
+  level: Levels;
   peopleCount: number;
 }
 
@@ -35,7 +29,7 @@ const RoomCard = ({name, lang, level, peopleCount}: IProps): JSX.Element => {
           <Flag />
           <DetailsText>{lang}</DetailsText>
           <LevelIndicator />
-          <DetailsText>{Level[level]}</DetailsText>
+          <DetailsText>{Levels[level]}</DetailsText>
         </LanguageAndLevelContainer>
         <PeopleCountContainer>
           <Icon icon="fluent:people-16-filled" />

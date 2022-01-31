@@ -31,7 +31,7 @@ const Content = styled.div`
   max-width: ${({theme}) => theme.breakpoints.XL}px;
   padding: 0 24px;
   flex-grow: 1;
-  overflow-y: scroll;
+  overflow-y: auto;
 
   @media (min-width: ${({theme}) => theme.breakpoints.M}px) {
     margin: 0 auto;
