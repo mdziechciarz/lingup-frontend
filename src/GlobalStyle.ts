@@ -7,9 +7,10 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  body {
+  body, button, input {
     font-family: 'Noto Sans', sans-serif;
   }
+  
 `;
 
 export default GlobalStyle;
