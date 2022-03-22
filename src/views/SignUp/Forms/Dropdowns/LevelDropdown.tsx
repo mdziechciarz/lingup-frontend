@@ -1,34 +1,31 @@
 import React from 'react';
-import {RoomLanguageLevels} from 'types';
-import Select, {components, OptionProps} from 'react-select';
+import {UserLanguageLevels} from 'types';
+import Select, {components} from 'react-select';
 import {customStyles, customTheme, IconContainer} from './styles';
 import BegginerIcon from 'assets/levelIndicators/Begginer.svg';
 import IntermediateIcon from 'assets/levelIndicators/Intermediate.svg';
 import AdvancedIcon from 'assets/levelIndicators/Advanced.svg';
-import AnyIcon from 'assets/levelIndicators/Any.svg';
 
 const options = [
   {
-    value: RoomLanguageLevels.begginer,
+    value: UserLanguageLevels.begginer,
     label: 'Begginer',
     icon: BegginerIcon,
   },
   {
-    value: RoomLanguageLevels.intermediate,
+    value: UserLanguageLevels.intermediate,
     label: 'Intermediate',
     icon: IntermediateIcon,
   },
   {
-    value: RoomLanguageLevels.advanced,
+    value: UserLanguageLevels.advanced,
     label: 'Advanced',
     icon: AdvancedIcon,
   },
-  {
-    value: RoomLanguageLevels.any,
-    label: 'Any',
-    icon: AnyIcon,
-  },
 ];
+
+const getDefaultValue = (level: UserLanguageLevels) =>
+  options.find(option => option.value === level);
 
 const {Option, ValueContainer} = components;
 
@@ -46,7 +43,6 @@ const CustomOption = (props: any) => (
 const CustomValueContainer = ({children, ...props}: any) => {
   return (
     <ValueContainer {...props}>
-      {/* {props.hasValue && <IconContainer>{props.getValue().icon}</IconContainer>} */}
       {props.hasValue && (
         <IconContainer>
           <img src={props.getValue()[0].icon} alt={props.getValue()[0].label} />
@@ -57,13 +53,20 @@ const CustomValueContainer = ({children, ...props}: any) => {
   );
 };
 
-const LevelDropdown = () => {
+interface IProps {
+  defaultSelectedLevel?: UserLanguageLevels | null;
+  onChange?: any;
+}
+
+const LevelDropdown = ({defaultSelectedLevel, onChange}: IProps) => {
   return (
     <Select
       options={options}
       components={{Option: CustomOption, ValueContainer: CustomValueContainer}}
       styles={customStyles}
       theme={customTheme}
+      defaultValue={defaultSelectedLevel && getDefaultValue(defaultSelectedLevel)}
+      onChange={onChange}
     />
   );
 };

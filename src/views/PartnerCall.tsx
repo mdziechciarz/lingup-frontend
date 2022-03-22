@@ -1,10 +1,10 @@
 import React from 'react';
+import styled from 'styled-components';
 import MainTemplate from 'templates/MainTemplate';
 import CallHeader from 'components/Call/CallHeader';
 import CallTopicAdviser from 'components/Call/CallTopicAdviser';
-import CallMembersPanel from 'components/Call/GroupCall/CallMembersPanel';
 import CallMenu from 'components/Call/CallMenu';
-import styled from 'styled-components';
+import PartnerPanel from 'components/Call/PartnerCall/PartnerPanel';
 
 const Container = styled.div`
   @media (min-width: ${({theme}) => theme.breakpoints.XL}px) {
@@ -12,17 +12,17 @@ const Container = styled.div`
   }
 `;
 
-const GroupCall = () => {
+const PartnerCall = () => {
   return (
     <MainTemplate>
       <Container>
-        <CallHeader title="Just join and get to know us, we are all only begginers 🙈🙉🙊" />
+        <CallHeader />
         <CallTopicAdviser />
-        <CallMembersPanel />
+        <PartnerPanel />
         <CallMenu />
       </Container>
     </MainTemplate>
   );
 };
 
-export default GroupCall;
+export default PartnerCall;
