@@ -10,6 +10,7 @@ import Profile from 'routes/Profile';
 import Partner from 'routes/Partner';
 import CallView from 'routes/Call';
 import SignUp from 'routes/SignUp';
+import SignIn from 'routes/SignIn';
 
 const App = (): JSX.Element => {
   const isLogged = false;
@@ -32,6 +33,7 @@ const App = (): JSX.Element => {
             <>
               <Route path="/" element={<div>Landing page</div>} />
               <Route path="/signup" element={<SignUp />} />
+              <Route path="/signin" element={<SignIn />} />
             </>
           )}
         </Routes>
