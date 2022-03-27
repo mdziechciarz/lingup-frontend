@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import Button from './Button/Button';
-import Modal from './Modal';
+import ButtonLanguageLevel from '../ButtonLanguageLevel/Button';
+import Modal from '../ModalLanguageLeve';
 
 const RoomPicker = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -11,7 +11,7 @@ const RoomPicker = () => {
 
   return (
     <>
-      <Button onClick={handleOpenModal} />
+      <ButtonLanguageLevel onClick={handleOpenModal} />
       <Modal isOpen={isModalOpen} handleClose={handleCloseModal} />
     </>
   );

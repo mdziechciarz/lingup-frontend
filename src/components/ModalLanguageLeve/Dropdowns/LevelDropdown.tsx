@@ -1,6 +1,6 @@
 import React from 'react';
 import {RoomLanguageLevels} from 'types';
-import Select, {components, OptionProps} from 'react-select';
+import Select, {components} from 'react-select';
 import {customStyles, customTheme, IconContainer} from './styles';
 import BegginerIcon from 'assets/levelIndicators/Begginer.svg';
 import IntermediateIcon from 'assets/levelIndicators/Intermediate.svg';
@@ -46,7 +46,6 @@ const CustomOption = (props: any) => (
 const CustomValueContainer = ({children, ...props}: any) => {
   return (
     <ValueContainer {...props}>
-      {/* {props.hasValue && <IconContainer>{props.getValue().icon}</IconContainer>} */}
       {props.hasValue && (
         <IconContainer>
           <img src={props.getValue()[0].icon} alt={props.getValue()[0].label} />

@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  body, button, input {
+  body, button, input, textarea {
     font-family: 'Noto Sans', sans-serif;
   }
   

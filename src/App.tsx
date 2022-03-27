@@ -5,13 +5,15 @@ import {ThemeProvider} from 'styled-components';
 import {mainTheme} from 'theme/mainTheme';
 import GlobalStyle from 'GlobalStyle';
 
-import HomeView from './views/Home';
-import Profile from 'views/Profile';
-import GroupCall from 'views/GroupCall';
+import HomeView from './routes/Home';
+import Profile from 'routes/Profile';
+import Partner from 'routes/Partner';
+import CallView from 'routes/Call';
+import SignUp from 'routes/SignUp';
 
 const App = (): JSX.Element => {
-  const isLogged = true;
-  const isInCall = true;
+  const isLogged = false;
+  const isInCall = false;
 
   return (
     <ThemeProvider theme={mainTheme}>
@@ -21,13 +23,16 @@ const App = (): JSX.Element => {
           {isLogged ? (
             <>
               <Route path="/" element={<HomeView />} />
-              <Route path="/1on1" element={<HomeView />} />
+              <Route path="/1on1" element={<Partner />} />
               <Route path="/profile" element={<Profile />} />
-              {isInCall && <Route path="/call" element={<GroupCall />} />}
+              {isInCall && <Route path="/call" element={<CallView />} />}
               <Route path="*" element={<Navigate to="/" replace />} />
             </>
           ) : (
-            <Route path="/" element={<div>Landing page</div>} />
+            <>
+              <Route path="/" element={<div>Landing page</div>} />
+              <Route path="/signup" element={<SignUp />} />
+            </>
           )}
         </Routes>
       </Router>

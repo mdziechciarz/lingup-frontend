@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Levels} from 'types';
+import {RoomLanguageLevels} from 'types';
 import BegginerIcon from 'assets/levelIndicators/Begginer.svg';
 import IntermediateIcon from 'assets/levelIndicators/Intermediate.svg';
 import AdvancedIcon from 'assets/levelIndicators/Advanced.svg';
@@ -15,20 +15,20 @@ const Container = styled.span`
   }
 `;
 
-const getIcon = (level: Levels) => {
+const getIcon = (level: RoomLanguageLevels) => {
   switch (level) {
-    case Levels.begginer:
+    case RoomLanguageLevels.begginer:
       return BegginerIcon;
-    case Levels.intermediate:
+    case RoomLanguageLevels.intermediate:
       return IntermediateIcon;
-    case Levels.advanced:
+    case RoomLanguageLevels.advanced:
       return AdvancedIcon;
     default:
       return AnyIcon;
   }
 };
 
-const LevelIndicator = ({level}: {level: Levels}) => {
+const LevelIndicator = ({level}: {level: RoomLanguageLevels}) => {
   return (
     <Container>
       <img src={getIcon(level)} alt="" />

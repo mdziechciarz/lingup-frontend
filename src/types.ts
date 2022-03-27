@@ -1,6 +1,12 @@
-export enum Levels {
+export enum RoomLanguageLevels {
   any,
   begginer,
+  intermediate,
+  advanced,
+}
+
+export enum UserLanguageLevels {
+  begginer = 1,
   intermediate,
   advanced,
 }
@@ -11,43 +17,43 @@ type Language = {
 };
 
 export const Languages: {[key: string]: Language} = {
-  english: {
+  English: {
     name: 'English',
     flagCode: 'gb',
   },
-  polish: {
+  Polish: {
     name: 'Polish',
     flagCode: 'pl',
   },
-  spanish: {
+  Spanish: {
     name: 'Spanish',
     flagCode: 'es',
   },
-  german: {
+  German: {
     name: 'German',
     flagCode: 'de',
   },
-  dutch: {
+  Dutch: {
     name: 'Dutch',
     flagCode: 'nl',
   },
-  italian: {
+  Italian: {
     name: 'Italian',
     flagCode: 'it',
   },
-  norwegian: {
+  Norwegian: {
     name: 'Norwegian',
     flagCode: 'no',
   },
-  danish: {
+  Danish: {
     name: 'Danish',
     flagCode: 'dk',
   },
-  swedish: {
+  Swedish: {
     name: 'Swedish',
     flagCode: 'se',
   },
-  french: {
+  French: {
     name: 'French',
     flagCode: 'fr',
   },
