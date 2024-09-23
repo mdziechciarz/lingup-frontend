@@ -13,8 +13,8 @@ import SignUp from 'routes/SignUp';
 import SignIn from 'routes/SignIn';
 
 const App = (): JSX.Element => {
-  const isLogged = false;
-  const isInCall = false;
+  const isLogged = true;
+  const isInCall = true;
 
   return (
     <ThemeProvider theme={mainTheme}>
