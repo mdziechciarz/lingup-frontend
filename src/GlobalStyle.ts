@@ -6,6 +6,11 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
+
+  body, button, input, textarea {
+    font-family: 'Noto Sans', sans-serif;
+  }
+  
 `;
 
 export default GlobalStyle;

@@ -1,8 +1,11 @@
 import MainTemplate from 'templates/MainTemplate';
+import RoomsControlPanel from 'components/RoomsControlPanel';
+import RoomsList from 'components/RoomsList';
 
 const HomeView = (): JSX.Element => (
   <MainTemplate>
-    <h1>Hello there!</h1>
+    <RoomsControlPanel />
+    <RoomsList />
   </MainTemplate>
 );
 
